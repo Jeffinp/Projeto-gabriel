@@ -31,3 +31,20 @@ link.addEventListener('click', function(event) {
     targetElement.scrollIntoView({ behavior: 'smooth' });
 });
 });
+
+document.querySelectorAll('.faq-question').forEach(question => {
+    question.addEventListener('click', () => {
+    const item = question.parentElement;
+    const isActive = item.classList.contains('active');
+    
+    // Fecha todos os items
+    document.querySelectorAll('.faq-item').forEach(faqItem => {
+        faqItem.classList.remove('active');
+    });
+    
+    // Abre o item clicado se não estava ativo
+    if (!isActive) {
+        item.classList.add('active');
+    }
+    });
+});
