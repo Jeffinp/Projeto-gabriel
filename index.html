@@ -7,6 +7,8 @@
     <title>Seca e Define | Transforme seu corpo em 21 dias</title>
     <link rel="stylesheet" href="./scr/css/style.css">
     <link rel="preload" as="image" href="./assets/images/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.0.4/swiper-bundle.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.0.4/swiper-bundle.min.js"></script>
 </head>
 <body>
 
@@ -23,7 +25,7 @@
                 <li><a href="#para-quem">Para quem?</a></li>
                 <li><a href="#beneficios">Benefícios</a></li>
                 <li><a href="#depoimentos">Depoimentos</a></li>
-                <li><a href="#inscricao" class="cta-button">Inscreva-se</a></li>
+                <li><a href="#inscricao" class="cta-button7">Inscreva-se</a></li>
             </ul>
         </div>
     </nav>
@@ -34,114 +36,247 @@
             <h1>Transforme seu corpo em 21 dias!</h1>
             <p class="hero-subtitle">A sua melhor versão começa no desafio seca e define!</p>
             <p class="hero-description">Perca gordura e ganhe massa muscular ao mesmo tempo através da recomposição corporal.</p>
-            <a href="#inscricao" class="cta-button">Inscreva-se Agora!</a>
+            <a href="#inscricao" class="cta-button6">Inscreva-se Agora!</a>
         </div>
     </header>
 
     <main>
-        <section id="para-quem" class="section-padding bg-light">
+        <section id="para-quem" class="target-section">
             <div class="container">
-                <h2>Para quem é o desafio</h2>
-                <h2 class="fundo-vermelho">seca e define?</h2>
-                <div class="content-grid">
+                <header class="section-header">
+                    <h1 class="main-title">Para quem é o desafio</h1>
+                    <div class="accent-title">
+                        <span>seca e define?</span>
+                    </div>
+                </header>
+
+                <div class="content-wrapper">
                     <div class="text-content">
-                        <p>Esse desafio é para você, mulher que, entre a correria do dia a dia, ainda encontra tempo para cuidar de si mesma.</p>
+                        <div class="intro-text">
+                            <p>Esse desafio é para você, mulher que, entre a correria do dia a dia, ainda encontra tempo para cuidar de si mesma.</p>
+                        </div>
+                        
                         <ul class="feature-list">
-                        <li>Chega de <strong>dietas malucas</strong> que só trazem <strong>frustração</strong></li>
-                        <li>Obtenha <strong>resultados reais e duradouros</strong></li>
-                        <li><strong>Queime gordura</strong> e <strong>ganhe massa muscular</strong></li>
-                        <li>Transforme seu corpo com <strong>acompanhamento profissional</strong></li>
+                            <li class="feature-item">
+                                <div class="icon-wrapper">
+                                    <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M20 6L9 17l-5-5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <span>Chega de <strong>dietas malucas</strong> que só trazem <strong>frustração</strong></span>
+                            </li>
+                            <li class="feature-item">
+                                <div class="icon-wrapper">
+                                    <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M20 6L9 17l-5-5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <span>Obtenha <strong>resultados reais e duradouros</strong></span>
+                            </li>
+                            <li class="feature-item">
+                                <div class="icon-wrapper">
+                                    <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M20 6L9 17l-5-5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <span><strong>Queime gordura</strong> e <strong>ganhe massa muscular</strong></span>
+                            </li>
+                            <li class="feature-item">
+                                <div class="icon-wrapper">
+                                    <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M20 6L9 17l-5-5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <span>Transforme seu corpo com <strong>acompanhamento profissional</strong></span>
+                            </li>
                         </ul>
                     </div>
 
                     <div class="image-content">
-                        <img src="./scr/images/Design-sem-nome-2.png" alt="Mulher praticando exercícios" width="400" height="300">
+                        <div class="image-wrapper">
+                            <img src="./scr/images/Design-sem-nome-2.png" alt="Mulher praticando exercícios">
+                            <div class="image-overlay"></div>
+                        </div>
                     </div>
                 </div>
 
-                <a href="#inscricao" class="cta-button">EU QUERO O DESAFIO!</a>
+                <div class="cta-wrapper">
+                    <a href="#inscricao" class="cta-button4">
+                        <span class="button-text">EU QUERO O DESAFIO!</span>
+                        <span class="button-icon">→</span>
+                    </a>
+                </div>
             </div>
         </section>
-
-        <section id="beneficios" class="section-padding">
+        
+        <section id="beneficios" class="benefits-section">
             <div class="container">
                 <h2>Garantindo sua vaga hoje você terá acesso a:</h2>
                 <div class="benefits-grid">
-                    
-                    <article class="benefit-card">
-                        <h3>30 dias de acompanhamento nutricional</h3>
-                        <p>Suporte via WhatsApp com profissionais especializados</p>
-                    </article>
+                        <article class="benefit-card">
+                            <h3>30 dias de acompanhamento nutricional</h3>
+                            <p>Suporte via WhatsApp com profissionais especializados</p>
+                        </article>
 
-                    <article class="benefit-card">
-                        <h3>Planejamento alimentar personalizado</h3>
-                        <p>Estratégias nutricionais para secar e definir de acordo com seu objetivo</p>
-                    </article>
+                        <article class="benefit-card">
+                            <h3>Planejamento alimentar personalizado</h3>
+                            <p>Estratégias nutricionais para secar e definir de acordo com seu objetivo<p>
+                        </article>
 
-                    <article class="benefit-card">
-                        <h3>Plataforma Premium de videoaulas</h3>
-                        <p>Acesso exclusivo a estratégias nutricionais em vídeo</p>
-                    </article>
+                        <article class="benefit-card">
+                            <h3>Plataforma Premium de videoaulas</h3>
+                            <p>Acesso exclusivo a estratégias nutricionais em vídeo</p>
+                        </article>
 
-                    <article class="benefit-card">
-                        <h3>Programa de treinos completo</h3>
-                        <p>Foco em redução de gordura e aumento da definição corporal</p>
-                    </article>
+                        <article class="benefit-card">
+                            <h3>Programa de treinos completo</h3>
+                            <p>Foco em redução de gordura e aumento da definição corporal</p>
+                        </article>
 
-                    <article class="benefit-card">
-                        <h3>Estratégias semanais</h3>
-                        <p>Novas estratégias nutricionais a cada semana do Desafio</p>
-                    </article>
-
+                        <article class="benefit-card">
+                            <h3>Estratégias semanais</h3>
+                            <p>Novas estratégias nutricionais a cada semana do Desafio</p>
+                        </article>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section id="resultados" class="section-padding bg-light">
+
+            <section id="resultados" class="section-results">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">O Desafio Seca e Define já mudou a vida de mais de <span class="highlight">10 mil mulheres!</span></h2>
+                        <div class="section-subtitle">Resultados reais em apenas 21 dias</div>
+                    </div>
+        
+                    <div class="carousel-wrapper">
+                        <div class="swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <figure class="transformation-card">
+                                        <div class="image-wrapper">
+                                            <img src="./scr/images/11-1.png" alt="Transformação da Maria S.">
+                                            <div class="transformation-overlay">
+                                                <span class="days-tag">21 dias</span>
+                                            </div>
+                                        </div>
+                                        <figcaption class="transformation-info">
+                                            <div class="participant-name">Maria S.</div>
+                                            <div class="transformation-details">Perdeu 8kg e 24cm</div>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+        
+                                <div class="swiper-slide">
+                                    <figure class="transformation-card">
+                                        <div class="image-wrapper">
+                                            <img src="./scr/images/11-2.png" alt="Transformação da Ana P.">
+                                            <div class="transformation-overlay">
+                                                <span class="days-tag">21 dias</span>
+                                            </div>
+                                        </div>
+                                        <figcaption class="transformation-info">
+                                            <div class="participant-name">Ana P.</div>
+                                            <div class="transformation-details">Perdeu 6kg e 18cm</div>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+        
+                                <div class="swiper-slide">
+                                    <figure class="transformation-card">
+                                        <div class="image-wrapper">
+                                            <img src="./scr/images/13.png" alt="Transformação da Julia M.">
+                                            <div class="transformation-overlay">
+                                                <span class="days-tag">21 dias</span>
+                                            </div>
+                                        </div>
+                                        <figcaption class="transformation-info">
+                                            <div class="participant-name">Julia M.</div>
+                                            <div class="transformation-details">Perdeu 7kg e 22cm</div>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+        
+                                <div class="swiper-slide">
+                                    <figure class="transformation-card">
+                                        <div class="image-wrapper">
+                                            <img src="./scr/images/14.png" alt="Transformação da Paula R.">
+                                            <div class="transformation-overlay">
+                                                <span class="days-tag">21 dias</span>
+                                            </div>
+                                        </div>
+                                        <figcaption class="transformation-info">
+                                            <div class="participant-name">Paula R.</div>
+                                            <div class="transformation-details">Perdeu 7kg e 22cm</div>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <figure class="transformation-card">
+                                        <div class="image-wrapper">
+                                            <img src="./scr/images/15.png" alt="Transformação da Paula R.">
+                                            <div class="transformation-overlay">
+                                                <span class="days-tag">21 dias</span>
+                                            </div>
+                                        </div>
+                                        <figcaption class="transformation-info">
+                                            <div class="participant-name">Paula R.</div>
+                                            <div class="transformation-details">Perdeu 7kg e 22cm</div>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+                        </div>
+                    </div>
+        
+                    <div class="cta-container">
+                        <a href="#inscricao" class="cta-button2 pulse">
+                            QUERO COMEÇAR MINHA TRANSFORMAÇÃO
+                            <span class="button-subtitle">Clique aqui para garantir sua vaga</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        
+        <section class="bonus-section">
             <div class="container">
-
-                <h2>O Desafio Seca e Define já mudou a vida de mais de 10 mil mulheres!</h2>
-                <div class="carousel">
-
-                    <div class="carousel-inner">
-
-                        <figure class="before-after carousel-item">
-                            <img src="./assets/images/antes-depois-1.jpg" alt="Antes e depois da participante 1" loading="lazy">
-                            <figcaption>Transformação em 21 dias - Maria S.</figcaption>
-                        </figure>
-
-                        <figure class="before-after carousel-item">
-                            <img src="./assets/images/antes-depois-2.jpg" alt="Antes e depois da participante 2" loading="lazy">
-                            <figcaption>Transformação em 21 dias - Ana P.</figcaption>
-                        </figure>
-                        
-                        <figure class="before-after carousel-item">
-                            <img src="./assets/images/antes-depois-3.jpg" alt="Antes e depois da participante 3" loading="lazy">
-                            <figcaption>Transformação em 21 dias - Julia M.</figcaption>
-                        </figure>
-                    </div>
-
-                    <div class="carousel-controls">
-                        <button class="carousel-control prev-button">Anterior</button>
-                        <button class="carousel-control next-button">Próximo</button>
-                    </div>
-
+                <div class="bonus-header">
+                    <div class="exclusive-tag">Exclusivo</div>
+                    <h2 class="bonus-title">Hoje você ganha <span class="highlight">GRATUITAMENTE</span></h2>
+                    <div class="bonus-subtitle">Presentes especiais + Bônus exclusivos</div>
                 </div>
-
-                <a href="#inscricao" class="cta-button">EU QUERO ENTRAR NO DESAFIO</a>
-            </div>
-        </section>
-
-        <section class="desconto">
-            <div class="container"> 
-                <h2>Exclusivamente HOJE! você ganha GRATUITAMENTE Presentes + Bônus</h2>
-                <ul class="bonus-list">
-                    <li>Protocolo Lipo Natural</li>
-                    <li>200 Receitas Irresistíveis</li>
-                    <li>Módulo Mobilidade Coxas Definidas</li>
-                    <li>Modulo Glúteos Empinados</li>
-                    <li>Pré inscrição para o Método Shape HD</li>
-                </ul>
+        
+                <div class="bonus-grid">
+                    <div class="bonus-card">
+                        <div class="bonus-icon">🌿</div>
+                        <h3>Protocolo Lipo Natural</h3>
+                        <p>Acelere seus resultados naturalmente</p>
+                    </div>
+                    <div class="bonus-card">
+                        <div class="bonus-icon">📖</div>
+                        <h3>200 Receitas Irresistíveis</h3>
+                        <p>Deliciosas e fitness</p>
+                    </div>
+                    <div class="bonus-card">
+                        <div class="bonus-icon">💪</div>
+                        <h3>Mobilidade Coxas Definidas</h3>
+                        <p>Exercícios específicos para suas pernas</p>
+                    </div>
+                    <div class="bonus-card">
+                        <div class="bonus-icon">🍑</div>
+                        <h3>Glúteos Empinados</h3>
+                        <p>Treinos focados para seus glúteos</p>
+                    </div>
+                    <div class="bonus-card">
+                        <div class="bonus-icon">⭐</div>
+                        <h3>Pré inscrição Shape HD</h3>
+                        <p>Acesso antecipado ao novo método</p>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -182,7 +317,7 @@
                         <p>Por apenas 12x de</p>
                         <p class="preco-parcelado">R$ 9,74</p>
                         <p>ou R$ 97 à vista.</p>
-                        <button class="cta-button">QUERO ENTRAR NO DESAFIO!</button>
+                        <button class="cta-button3">QUERO ENTRAR NO DESAFIO!</button>
                     </div>
                     <span><strong>Atenção: últimas vagas com desconto especial!</strong></span>
                 </div>
@@ -231,49 +366,62 @@
 
         <section class="perguntas-frequentes">
             <div class="container">
-            <div class="faq-header">
-                <h2>PERGUNTAS FREQUENTES</h2>
-                <p class="section-subtitle">Tire suas principais dúvidas sobre o programa</p>
-            </div>
-            
-            <div class="faq-grid">
-                <div class="faq-item">
-                <div class="faq-question">Quanto tempo de acesso eu tenho na plataforma?</div>
-                <div class="faq-answer">Você terá 21 dias de desafio mais 9 de bônus.</div>
+                <div class="faq-header">
+                    <h2>PERGUNTAS FREQUENTES</h2>
+                    <p class="section-subtitle">Tire suas principais dúvidas sobre o programa</p>
                 </div>
-                
-                <div class="faq-item">
-                <div class="faq-question">Consigo assistir tudo no meu celular?</div>
-                <div class="faq-answer">Sim, temos um aplicativo para você ter tudo na palma da sua mão. Android ou IOS.</div>
-                </div>
-                
-                <div class="faq-item">
-                <div class="faq-question">Serve para quem não treina?</div>
-                <div class="faq-answer">Serve para quem não treina e já treina. Nossas planilhas de treinos servem para mesmo que nunca treinou, criamos uma didática do Básico ao Avançado para quem quer treinar 4,5 ou até 6x na semana.</div>
-                </div>
-                
-                <div class="faq-item">
-                <div class="faq-question">Eu sou falsa magra, serve para mim?</div>
-                <div class="faq-answer">Com toda certeza, temos alunas que entraram como falsas magras e hoje estão totalmente fora da antiga realidade delas.</div>
-                </div>
-                
-                <div class="faq-item">
-                <div class="faq-question">Sou lactante, serve para mim?</div>
-                <div class="faq-answer">Sim, atendemos mamães que estão no período pós-parto e lactantes.</div>
-                </div>
-                
-                <div class="faq-item">
-                <div class="faq-question">Moro fora do Brasil, consigo acessar?</div>
-                <div class="faq-answer">Sim, nossa plataforma e nossa comunidade é internacional.</div>
-                </div>
-            </div>
         
-            <div class="faq-contato">
-                <h2>OUTRAS DÚVIDAS?</h2>
-                <button class="cta-button">FALE COM NOSSO SUPORTE</button>
-            </div>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-question">Quanto tempo de acesso eu tenho na plataforma?</div>
+                        <div class="faq-answer-wrapper">
+                            <div class="faq-answer">Você terá 21 dias de desafio mais 9 de bônus.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Consigo assistir tudo no meu celular?</div>
+                        <div class="faq-answer-wrapper">
+                            <div class="faq-answer">Sim, temos um aplicativo para você ter tudo na palma da sua mão. Android ou iOS.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Serve para quem não treina?</div>
+                        <div class="faq-answer-wrapper">
+                            <div class="faq-answer">Serve para quem não treina e já treina. Nossas planilhas de treinos servem para quem nunca treinou. Criamos uma didática do Básico ao Avançado para quem quer treinar 4, 5 ou até 6x na semana.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Eu sou falsa magra, serve para mim?</div>
+                        <div class="faq-answer-wrapper">
+                            <div class="faq-answer">Com toda certeza, temos alunas que entraram como falsas magras e hoje estão totalmente fora da antiga realidade delas.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Sou lactante, serve para mim?</div>
+                        <div class="faq-answer-wrapper">
+                            <div class="faq-answer">Sim, atendemos mamães que estão no período pós-parto e lactantes.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Moro fora do Brasil, consigo acessar?</div>
+                        <div class="faq-answer-wrapper">
+                            <div class="faq-answer">Sim, nossa plataforma e nossa comunidade são internacionais.</div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="faq-contato">
+                    <h2>OUTRAS DÚVIDAS?</h2>
+                    <button class="cta-button">FALE COM NOSSO SUPORTE</button>
+                </div>
             </div>
         </section>
+        
     </main>
 
     <footer class="site-footer">
@@ -304,6 +452,6 @@
         </div>
     </footer>
 
-<script src="./scr/script.js" defer></script>
+<script src="./scr/js/script.js" defer></script>
 </body>
 </html>

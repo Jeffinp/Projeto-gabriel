@@ -1,0 +1,35 @@
+
+
+/* Hero Section */
+.hero {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    padding: var(--spacing-xl) 0;
+    text-align: center;
+  }
+  
+  .hero h1,
+  .hero .hero-subtitle {
+    color: var(--color-white);
+  }
+  
+  .hero .cta-button6 {
+    margin-top: var(--spacing-lg); /* Adicionei margem superior */
+  }
+
+  .cta-button6 {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--color-primary);
+    color: var(--color-white);
+    padding: 1.2em 2.4em;
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+  
+  
