@@ -222,6 +222,11 @@
         margin: 0 auto var(--spacing-xs) auto;
     }
 
+    .image img {
+        height: auto;
+        width: 350px;
+    }
+
     .feature-item span {
         font-size: 0.9rem;
     }
