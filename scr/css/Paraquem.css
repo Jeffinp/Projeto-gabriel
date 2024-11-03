@@ -1,5 +1,5 @@
-  /* Seção Target */
-  .target-section {
+/* Seção Target */
+.target-section {
     padding: var(--spacing-2xl) 0;
     background-color: var(--color-surface);
 }
@@ -107,7 +107,7 @@
     position: relative;
 }
 
-.image-wrapper {
+.image {
     position: relative;
     border-radius: var(--radius-xl);
     overflow: hidden;
@@ -116,7 +116,14 @@
     transition: transform 0.5s ease;
 }
 
-.image-wrapper:hover {
+.image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a imagem preencha a div mantendo a proporção */
+    border-radius: inherit; /* Mantém o mesmo border-radius da div */
+}
+
+.image:hover {
     transform: perspective(1000px) rotateY(0deg);
 }
 
@@ -166,6 +173,7 @@
 .cta-button:hover .button-icon {
     transform: translateX(5px);
 }
+
 
 @media (max-width: 768px) {
     /* Seção Target */
