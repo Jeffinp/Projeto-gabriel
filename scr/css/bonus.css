@@ -266,6 +266,9 @@ box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
 
 .bonus h2 {
     font-size: 2rem;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: -5px;
 }
 
 .bonus-texto h3 {

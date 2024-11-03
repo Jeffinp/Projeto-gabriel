@@ -1,4 +1,3 @@
-
 /* Seção de Pagamento Parcelado */
 .pagamento-parcelado {
     background: linear-gradient(to bottom, var(--color-white) 0%, #f8f9fa 100%);
@@ -122,38 +121,55 @@
 
 @keyframes pulse {
     0% {
-    transform: scale(1);
-    opacity: 1;
+        transform: scale(1);
+        opacity: 1;
     }
     50% {
-    transform: scale(1.05);
-    opacity: 0.8;
+        transform: scale(1.05);
+        opacity: 0.8;
     }
     100% {
-    transform: scale(1);
-    opacity: 1;
+        transform: scale(1);
+        opacity: 1;
     }
 }
 
 /* Media Queries */
 @media (max-width: 768px) {
+    .container {
+        padding: 0 var(--spacing-md);
+    }
+
     .parcelado-texto h2 {
-    font-size: 1.8rem;
+        font-size: 1.8rem;
     }
     
     .preco-parcelado {
-    font-size: 2.5rem;
+        font-size: 2.5rem;
     }
     
-    .cta-button {
-    padding: var(--spacing-md) var(--spacing-xl);
-    font-size: 1.1rem;
-    width: 100%;
-    max-width: 320px;
+    .cta-button3 {
+        padding: var(--spacing-md) var(--spacing-lg);
+        font-size: 1.1rem;
+        width: 100%;
     }
     
     .parcelado-content span {
-    text-align: center;
-    font-size: 1rem;
+        text-align: center;
+        font-size: 1rem;
+        padding: var(--spacing-xs) var(--spacing-md); /* Ajustar padding para telas menores */
+    }
+
+    .parcelado-content > img:first-child {
+        max-width: 100%; /* Responsividade do logo */
+        margin-bottom: 32px; /* Ajustar margens para telas menores */
+    }
+
+    .parcelado-texto img {
+        max-width: 100%; /* Garantir que as imagens se ajustem à tela */
+    }
+
+    .parcelado-texto p {
+        font-size: 1rem; /* Ajustar texto para telas menores */
     }
 }

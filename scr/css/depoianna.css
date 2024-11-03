@@ -1,4 +1,3 @@
-
 /* Seção de Depoimento */
 .depoimento-anna {
     background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
@@ -27,14 +26,14 @@
 .depoimento-conteudo img {
     width: 100%;
     max-width: 400px;
-    border-radius: 20px;
+    border-radius: var(--radius-lg);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
     margin-top: 20px;
 }
 
 .depoimento-conteudo img:hover {
-    transform: scale(1.02);
+    transform: scale(1.05); /* Pequena escala para um efeito mais sutil */
 }
 
 /* Área de texto */
@@ -48,10 +47,10 @@
     font-weight: 700;
     background: linear-gradient(45deg, #fff, #f0f0f0);
     background-clip: text;
-    -webkit-background-clip: text; /* Para compatibilidade com navegadores baseados em WebKit (Chrome, Safari) */
-    color: transparent; /* Para que o gradiente seja visível */
+    -webkit-background-clip: text; /* Compatibilidade com navegadores WebKit */
+    color: transparent; /* Gradiente visível */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Adicionando sombra ao texto */
 }
-
 
 .texto-depoimento p {
     font-size: 1.1rem;
@@ -72,6 +71,7 @@
     margin-bottom: var(--spacing-md);
     font-size: 1.1rem;
     line-height: 1.4;
+    color: var(--color-light); /* Ajuste de cor para a lista */
 }
 
 .texto-depoimento li::before {
@@ -84,21 +84,20 @@
 
 /* Botão CTA */
 .cta-button {
-
-        display: inline-flex;
-        flex-direction: column;
-        align-items: center;
-        background: var(--color-primary);
-        color: var(--color-white);
-        padding: 1.2em;
-        border-radius: var(--radius-lg);
-        text-decoration: none;
-        font-weight: 700;
-        transition: background-color 0.3s ease;
-        border: none;
-        cursor: pointer;
-        margin-bottom: 20px;
-        margin-top: -30px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--color-primary);
+    color: var(--color-white);
+    padding: 1.2em;
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+    margin-top: -30px;
 }
 
 .cta-button:hover {
@@ -110,26 +109,37 @@
 /* Media Queries */
 @media (max-width: 768px) {
     .depoimento-conteudo {
-    grid-template-columns: 1fr;
-    text-align: center;
+        grid-template-columns: 1fr;
+        text-align: center;
     }
     
     .texto-depoimento {
-    text-align: center;
+        text-align: center;
     }
     
     .depoimento-conteudo img {
-    margin: 0 auto;
-    max-width: 300px;
+        margin: 0 auto;
+        margin-top: 20px;
+        max-width: 300px;
     }
     
     .texto-depoimento li {
-    padding-left: 0;
-    padding-top: var(--spacing-sm);
+        padding-left: 0;
+        padding-top: var(--spacing-sm);
     }
     
     .texto-depoimento li::before {
-    position: static;
-    margin-right: var(--spacing-sm);
+        position: static;
+        margin-right: var(--spacing-sm);
     }
+
+    .texto-depoimento h2 {
+        font-size: 2rem; /* Ajuste do tamanho da fonte em telas menores */
+    }
+
+    .texto-depoimento p {
+        font-size: 1rem; /* Ajuste do tamanho da fonte do parágrafo */
+    }
+
+    
 }

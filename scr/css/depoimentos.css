@@ -1,4 +1,3 @@
-
 /* Depoimentos */
 .testimonial-card {
     background-color: var(--color-surface);
@@ -6,15 +5,17 @@
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-md);
     border: 1px solid rgba(0, 0, 0, 0.05);
+    position: relative; /* Necessário para o pseudo-elemento ::before */
     transition: all 0.3s ease;
-    }
-    
-    .testimonial-card:hover {
+    overflow: hidden; /* Impede que o conteúdo ultrapasse os limites */
+}
+
+.testimonial-card:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-xl);
-    }
-    
-    .testimonial-card::before {
+}
+
+.testimonial-card::before {
     content: '"';
     position: absolute;
     top: var(--spacing-md);
@@ -23,12 +24,38 @@
     color: var(--color-primary);
     opacity: 0.1;
     line-height: 1;
-    }
-    
-    .testimonial-card p {
+}
+
+.testimonial-card p {
     margin-bottom: var(--spacing-md);
-    }
-    
-    .testimonial-card footer {
+    font-size: 1.1rem; /* Tamanho de fonte para melhor legibilidade */
+    line-height: 1.6; /* Aumenta o espaçamento entre linhas */
+    color: var(--color-text-dark); /* Contraste para melhor leitura */
+}
+
+.testimonial-card footer {
     text-align: right;
+    font-weight: bold; /* Destaque para o autor do depoimento */
+    color: var(--color-secondary); /* Usar uma cor diferente para o autor */
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .testimonial-card {
+        padding: var(--spacing-md); /* Reduzir padding em telas menores */
     }
+
+    .testimonial-card::before {
+        font-size: 3rem; /* Reduzir o tamanho da aspa em telas pequenas */
+        top: var(--spacing-sm); /* Ajustar a posição da aspa */
+        left: var(--spacing-sm); /* Ajustar a posição da aspa */
+    }
+
+    .testimonial-card p {
+        font-size: 1rem; /* Reduzir o tamanho da fonte do texto */
+    }
+
+    .testimonial-card footer {
+        font-size: 0.9rem; /* Diminuir o tamanho da fonte do autor */
+    }
+}

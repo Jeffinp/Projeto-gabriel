@@ -125,6 +125,7 @@
     transition: 0.5s;
 }
 
+/* Media Queries */
 @media (max-width: 768px) {
     .faq-header h2 {
         font-size: 2rem;
@@ -136,5 +137,22 @@
     
     .faq-answer {
         padding: 0 var(--spacing-md) var(--spacing-md);
+    }
+
+    .faq-contato {
+        padding: var(--spacing-md); /* Reduzir o padding para telas menores */
+    }
+
+    .faq-contato h2 {
+        font-size: 1.5rem; /* Ajustar o tamanho do título */
+    }
+
+    .cta-button {
+        padding: 0.8em 1.5em; /* Ajustar padding do botão */
+        font-size: 1rem; /* Reduzir tamanho da fonte do botão */
+    }
+
+    .faq-item {
+        border: 1px solid rgba(0, 0, 0, 0.1); /* Ajustar a borda para telas menores */
     }
 }
