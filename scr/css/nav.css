@@ -7,15 +7,11 @@
   z-index: 1000;
   padding: var(--spacing-xs) 0;
 }
-.nav-links {
-  width: 100%; /* ou um valor menor em porcentagem */
-  max-width: 100%;
-}
 
+/* Links de navegação */
 .nav-links {
-  display: flex;
+  display: none;
   justify-content: space-between;
-  display: none; /* Esconde os links inicialmente em telas menores */
   align-items: center;
   list-style: none;
 }
@@ -31,13 +27,19 @@
   color: var(--color-primary);
 }
 
+/* Botão de menu móvel (hambúrguer) */
 .mobile-menu-toggle {
-  display: block; 
+  display: block;
   position: relative;
   width: 30px;
-  height: 20px; /* Altura reduzida para melhor proporção */
+  height: 24px;
   cursor: pointer;
-  z-index: 1001; 
+  z-index: 1001;
+  transition: transform 0.3s ease;
+}
+
+.mobile-menu-toggle.active {
+  transform: scale(1.1); /* Efeito de escala ao ativar */
 }
 
 .mobile-menu-toggle span {
@@ -79,21 +81,21 @@
 /* Estilos para o menu quando estiver aberto */
 .nav-links.active {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   position: absolute;
-  top: 100%; 
+  top: 100%;
   left: 0;
   width: 100%;
   background-color: var(--color-white);
   box-shadow: var(--shadow-md);
   padding: var(--spacing-sm);
-  animation: slideDown 0.3s ease forwards; /* Animação de entrada */
+  animation: slideDown 0.3s ease forwards;
 }
 
 @keyframes slideDown {
   from {
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translateY(-15px);
   }
   to {
     opacity: 1;
@@ -102,15 +104,11 @@
 }
 
 .nav-links.active a {
-  margin-bottom: var(--spacing-xs); 
+  margin-bottom: var(--spacing-xs);
 }
 
 /* Animação de saída do menu */
-.nav-links {
-  transition: opacity 0.3s ease, transform 0.3s ease; /* Adiciona transição */
-}
-
-.nav-links.closing { /* Nova classe para animação de saída */
+.nav-links.closing {
   animation: slideUp 0.3s ease forwards;
 }
 
@@ -121,11 +119,11 @@
   }
   to {
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translateY(-15px);
   }
 }
 
-/* Esconde o menu em telas maiores (breakpoint ajustável) */
+/* Exibir menu em telas maiores */
 @media (min-width: 768px) {
   .mobile-menu-toggle {
     display: none;
@@ -133,23 +131,24 @@
 
   .nav-links {
     display: flex;
-    flex-direction: row; 
-    position: static; 
-    width: auto; 
+    flex-direction: row;
+    position: static;
+    width: auto;
     background-color: transparent;
     box-shadow: none;
     padding: 0;
   }
 
   .nav-links.active {
-    display: flex; 
+    display: flex;
   }
 
   .nav-links a {
-    margin-bottom: 0; 
+    margin-bottom: 0;
   }
 }
 
+/* Botão de chamada para ação */
 .cta-button7 {
   display: inline-flex;
   flex-direction: column;
@@ -159,7 +158,11 @@
   border-radius: var(--radius-lg);
   text-decoration: none;
   font-weight: 700;
-  transition: background-color 0.3s ease;
-  border: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
   cursor: pointer;
+}
+
+.cta-button7:hover {
+  background-color: var(--color-primary-dark);
+  transform: scale(1.05); /* Efeito de hover */
 }
