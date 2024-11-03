@@ -47,9 +47,11 @@
     margin-bottom: var(--spacing-md);
     font-weight: 700;
     background: linear-gradient(45deg, #fff, #f0f0f0);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text; /* Para compatibilidade com navegadores baseados em WebKit (Chrome, Safari) */
+    color: transparent; /* Para que o gradiente seja visível */
 }
+
 
 .texto-depoimento p {
     font-size: 1.1rem;

@@ -76,6 +76,8 @@ swiperContainer.addEventListener('mouseleave', () => {
     swiper.autoplay.start();
 });
 
+
+
 document.addEventListener('DOMContentLoaded', () => {
     const faqItems = document.querySelectorAll('.faq-item');
     
@@ -116,4 +118,36 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+});
+
+
+
+const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+mobileMenuToggle.addEventListener('click', () => {
+  mobileMenuToggle.classList.toggle('active');
+
+  if (navLinks.classList.contains('active')) {
+    navLinks.classList.remove('active');
+    navLinks.classList.add('closing');
+
+    navLinks.addEventListener('animationend', () => {
+      navLinks.classList.remove('closing');
+    }, { once: true });
+  } else {
+    navLinks.classList.add('active');
+  }
+});
+
+// Fechar o menu ao clicar fora
+document.addEventListener('click', (event) => {
+  if (!navLinks.contains(event.target) && !mobileMenuToggle.contains(event.target) && navLinks.classList.contains('active')) {
+    navLinks.classList.remove('active');
+    navLinks.classList.add('closing');
+
+    navLinks.addEventListener('animationend', () => {
+      navLinks.classList.remove('closing');
+    }, { once: true });
+  }
 });
