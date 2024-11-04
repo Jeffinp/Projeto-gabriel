@@ -1,7 +1,8 @@
-/* Seção Target */
+/* Seção Target - Animação de Entrada */
 .target-section {
     padding: var(--spacing-2xl) 0;
     background-color: var(--color-surface);
+    animation: fadeIn 1s ease-out;
 }
 
 .section-header {
@@ -9,17 +10,20 @@
     margin-bottom: var(--spacing-xl);
 }
 
+/* Título com Efeito de Destaque */
 .main-title {
     font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: 800;
     color: var(--color-text);
     margin-bottom: var(--spacing-md);
     line-height: 1.2;
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out forwards;
+    animation-delay: 0.2s;
 }
 
-.accent-title {
-    position: relative;
-    display: inline-block;
+.accent-title:hover span {
+    transform: scale(1.05);
 }
 
 .accent-title span {
@@ -58,6 +62,7 @@
     gap: var(--spacing-md);
 }
 
+/* Feature List com Animações Escalonadas */
 .feature-item {
     display: flex;
     align-items: center;
@@ -65,14 +70,34 @@
     background: var(--color-surface);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-md);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards;
 }
+
+.feature-list {
+    list-style: none;
+    display: grid;
+    gap: var(--spacing-md);
+}
+
+.feature-list .feature-item:nth-child(1) { animation-delay: 0.3s; }
+.feature-list .feature-item:nth-child(2) { animation-delay: 0.4s; }
+.feature-list .feature-item:nth-child(3) { animation-delay: 0.5s; }
+.feature-list .feature-item:nth-child(4) { animation-delay: 0.6s; }
 
 .feature-item:hover {
-    transform: translateX(var(--spacing-xs));
+    transform: translateX(var(--spacing-xs)) scale(1.02);
     box-shadow: var(--shadow-lg);
+    background: linear-gradient(
+        45deg,
+        var(--color-surface),
+        var(--color-surface),
+        rgba(var(--color-primary-rgb), 0.1)
+    );
 }
 
+/* Ícone com Animação */
 .icon-wrapper {
     display: flex;
     align-items: center;
@@ -83,12 +108,22 @@
     background: var(--color-primary);
     border-radius: var(--radius-full);
     flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover .icon-wrapper {
+    animation: pulse 1s infinite ease-in-out;
 }
 
 .check-icon {
     width: 18px;
     height: 18px;
     stroke: var(--color-white);
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover .check-icon {
+    transform: scale(1.2);
 }
 
 .feature-item span {
@@ -107,15 +142,21 @@
     position: relative;
 }
 
+/* Imagem com Efeitos 3D */
 .image {
     position: relative;
     border-radius: var(--radius-xl);
     overflow: hidden;
     box-shadow: var(--shadow-xl);
     transform: perspective(1000px) rotateY(-5deg);
-    transition: transform 0.5s ease;
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    animation: float 6s infinite ease-in-out;
 }
 
+.image:hover {
+    transform: perspective(1000px) rotateY(0deg) scale(1.02);
+    box-shadow: var(--shadow-2xl);
+}
 .image img {
     width: 100%;
     height: 100%;
@@ -123,17 +164,19 @@
     border-radius: inherit; /* Mantém o mesmo border-radius da div */
 }
 
-.image:hover {
-    transform: perspective(1000px) rotateY(0deg);
-}
-
 .image-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(45deg, 
-        rgba(255, 75, 75, 0.2), 
+    background: linear-gradient(
+        45deg,
+        rgba(255, 75, 75, 0.2),
         transparent 70%
     );
+    transition: opacity 0.3s ease;
+}
+
+.image:hover .image-overlay {
+    opacity: 0.8;
 }
 
 /* CTA Section */
@@ -142,40 +185,111 @@
     margin-top: var(--spacing-xl);
 }
 
+/* Botão CTA Animado */
 .cta-button4 {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     padding: var(--spacing-md) var(--spacing-xl);
-    background: linear-gradient(135deg, 
-        var(--color-primary), 
+    background: linear-gradient(
+        135deg,
+        var(--color-primary),
+        var(--color-primary-dark),
+        var(--color-primary),
         var(--color-primary-dark)
     );
+    background-size: 300% 100%;
     color: var(--color-white);
     font-size: 1.3rem;
     font-weight: 700;
     text-decoration: none;
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-lg);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    animation: fadeIn 0.8s ease-out forwards;
+    animation-delay: 0.8s;
 }
 
 .cta-button4:hover {
-    transform: translateY(-3px);
+    transform: translateY(-3px) scale(1.05);
     box-shadow: var(--shadow-xl);
+    background-position: 100% 0;
 }
+
 
 .button-icon {
     margin-left: var(--spacing-sm);
-    transition: transform 0.3s ease;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.cta-button:hover .button-icon {
-    transform: translateX(5px);
+.cta-button4:hover .button-icon {
+    transform: translateX(8px);
+}
+
+/* Keyframes Globais */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
 }
 
 
 @media (max-width: 768px) {
+
+    .feature-item, .image, .cta-button4 {
+        animation-duration: 0.6s;
+    }
+
+    .feature-item:hover {
+        transform: translateX(var(--spacing-xs)) scale(1.01);
+    }
+
+    .image {
+        animation: float 4s infinite ease-in-out;
+    }
+
+    .cta-button4:hover {
+        transform: translateY(-2px) scale(1.03);
+    }
+
     /* Seção Target */
     .target-section {
         padding: var(--spacing-md) var(--spacing-sm);
