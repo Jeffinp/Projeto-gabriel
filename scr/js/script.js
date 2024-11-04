@@ -1,40 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // FAQ interativo
-    const faqItems = document.querySelectorAll('.faq-item');
-
-    faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
-        const answerWrapper = item.querySelector('.faq-answer-wrapper');
-        const answer = item.querySelector('.faq-answer');
-
-        let isExpanded = false;
-
+        
+    // FAQ INTERATIVO
+    document.querySelectorAll('.faq-question').forEach(question => {
         question.addEventListener('click', () => {
-            // Fecha todos os outros itens
-            faqItems.forEach(otherItem => {
-                if (otherItem !== item && otherItem.classList.contains('active')) {
-                    const otherWrapper = otherItem.querySelector('.faq-answer-wrapper');
-                    otherItem.classList.remove('active');
-                    otherWrapper.style.height = '0px';
+            const item = question.closest('.faq-item');
+            const answer = item.querySelector('.faq-answer-wrapper');
+            
+            // Fecha todas as outras respostas
+            document.querySelectorAll('.faq-item.active').forEach(activeItem => {
+                if (activeItem !== item) {
+                    activeItem.classList.remove('active');
+                    activeItem.querySelector('.faq-answer-wrapper').style.height = '0px';
                 }
             });
-
-            // Alterna o item atual
-            isExpanded = !isExpanded;
+            
+            // Toggle atual
             item.classList.toggle('active');
-
-            // Define a altura para animação suave
-            if (isExpanded) {
-                answerWrapper.style.height = answer.offsetHeight + 'px';
+            if (item.classList.contains('active')) {
+                answer.style.height = answer.querySelector('.faq-answer').offsetHeight + 'px';
             } else {
-                answerWrapper.style.height = '0px';
-            }
-        });
-
-        // Ajusta a altura ao redimensionar a janela
-        window.addEventListener('resize', () => {
-            if (isExpanded) {
-                answerWrapper.style.height = answer.offsetHeight + 'px';
+                answer.style.height = '0px';
             }
         });
     });
@@ -133,3 +118,4 @@ document.addEventListener('DOMContentLoaded', () => {
         swiper.autoplay.start();
     });
 });
+
