@@ -29,9 +29,12 @@
   padding: var(--space-xl) var(--space-md);
   min-height: 100vh;
   display: grid;
-  place-items: center;
   position: relative;
   overflow: hidden;
+}
+
+.particle {
+  transition: transform 0.1s ease-out;
 }
 
 .hero::before {
