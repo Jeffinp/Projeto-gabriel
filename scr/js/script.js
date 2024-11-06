@@ -24,30 +24,61 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // HAMBURGUER
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const navLinks = document.querySelector('.nav-links');
-
-    mobileMenuToggle.addEventListener('click', () => {
-        const isActive = navLinks.classList.toggle('active');
-        mobileMenuToggle.classList.toggle('active');
-        mobileMenuToggle.setAttribute('aria-expanded', isActive);
-    });
-
-    // Fechar o menu ao clicar fora
-    document.addEventListener('click', (event) => {
-        if (!navLinks.contains(event.target) && !mobileMenuToggle.contains(event.target) && navLinks.classList.contains('active')) {
-            navLinks.classList.remove('active');
-            mobileMenuToggle.classList.remove('active');
-            mobileMenuToggle.setAttribute('aria-expanded', false);
-
-            navLinks.classList.add('closing');
-            navLinks.addEventListener('animationend', () => {
-                navLinks.classList.remove('closing');
-            }, { once: true });
+    
+    // Função para fechar o menu
+    const closeMenu = () => {
+        navLinks.classList.add('closing');
+        mobileMenuToggle.classList.remove('active');
+        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+        
+        navLinks.addEventListener('animationend', () => {
+            navLinks.classList.remove('active', 'closing');
+        }, { once: true });
+    };
+    
+    // Toggle do menu
+    mobileMenuToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isExpanded = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
+        
+        if (isExpanded) {
+            closeMenu();
+        } else {
+            navLinks.classList.add('active');
+            mobileMenuToggle.classList.add('active');
+            mobileMenuToggle.setAttribute('aria-expanded', 'true');
         }
     });
-
+    
+    // Fechar menu ao clicar fora
+    document.addEventListener('click', (event) => {
+        if (!navLinks.contains(event.target) && 
+            !mobileMenuToggle.contains(event.target) && 
+            navLinks.classList.contains('active')) {
+            closeMenu();
+        }
+    });
+    
+    // Fechar menu ao redimensionar a janela para desktop
+    window.addEventListener('resize', () => {
+        if (window.innerWidth >= 768 && navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active', 'closing');
+            mobileMenuToggle.classList.remove('active');
+            mobileMenuToggle.setAttribute('aria-expanded', 'false');
+        }
+    });
+    
+    // Fechar menu ao clicar em um link (mobile)
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth < 768) {
+                closeMenu();
+            }
+        });
+    });
+    
     // Carrossel (Swiper)
     const swiper = new Swiper('.swiper', {
         slidesPerView: 1,
