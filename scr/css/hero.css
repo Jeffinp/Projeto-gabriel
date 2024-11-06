@@ -1,35 +1,148 @@
+:root {
+  /* Sistema moderno de cores usando HSL para melhor manutenção */
+  --primary-hsl: 220, 50%, 50%;
+  --secondary-hsl: 200, 45%, 45%;
+  --white: hsl(0, 0%, 100%);
 
+  /* Sistema de espaçamento com escala moderna */
+  --space-unit: 0.5rem;
+  --space-xs: calc(var(--space-unit) * 1);
+  /* 0.5rem */
+  --space-sm: calc(var(--space-unit) * 2);
+  /* 1rem */
+  --space-md: calc(var(--space-unit) * 4);
+  /* 2rem */
+  --space-lg: calc(var(--space-unit) * 6);
+  /* 3rem */
+  --space-xl: calc(var(--space-unit) * 8);
+  /* 4rem */
 
-/* Hero Section */
-.hero {
-    background-color: var(--color-secondary);
-    color: var(--color-white);
-    padding: var(--spacing-xl) 0;
-    text-align: center;
-  }
-  
-  .hero h1,
-  .hero .hero-subtitle {
-    color: var(--color-white);
-  }
-  
-  .hero .cta-button6 {
-    margin-top: var(--spacing-lg); /* Adicionei margem superior */
-  }
-
-  .cta-button6 {
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    background: var(--color-primary);
-    color: var(--color-white);
-    padding: 1.2em 2.4em;
-    border-radius: var(--radius-lg);
-    text-decoration: none;
-    font-weight: 700;
-    transition: background-color 0.3s ease;
-    border: none;
-    cursor: pointer;
+  /* Sistema moderno de border-radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
 }
-  
-  
+
+.hero {
+  background-color: hsl(var(--secondary-hsl));
+  color: var(--white);
+  padding: var(--space-xl) var(--space-md);
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg,
+      hsla(var(--secondary-hsl), 0.9),
+      hsla(var(--secondary-hsl), 0.7));
+  z-index: 1;
+}
+
+.container-hero {
+  max-width: min(90%, 1200px);
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.logo {
+  margin-bottom: var(--space-lg);
+  transition: transform 0.3s ease;
+}
+
+.logo img {
+  max-width: 100%;
+  height: auto;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+.logo:hover {
+  transform: scale(1.02);
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.2;
+  margin-bottom: var(--space-md);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  margin-bottom: var(--space-sm);
+  opacity: 0.9;
+}
+
+.hero-description {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  max-width: 60ch;
+  text-align: center;
+  margin: 0 auto var(--space-lg);
+  opacity: 0.8;
+  line-height: 1.6;
+}
+
+.cta-button1 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: hsl(var(--primary-hsl));
+  color: var(--white);
+  padding: 1em 2.5em;
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.125rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px hsla(var(--primary-hsl), 0.3);
+  margin: auto;
+  /* Centraliza horizontalmente */
+}
+
+.container-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cta-button1:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px hsla(var(--primary-hsl), 0.4);
+  background: hsl(var(--primary-hsl), 0.9);
+}
+
+.cta-button1:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px hsla(var(--primary-hsl), 0.2);
+}
+
+/* Responsividade moderna usando container queries quando possível */
+@container (max-width: 768px) {
+  .hero {
+    padding: var(--space-lg) var(--space-md);
+  }
+}
+
+/* Media queries para fallback */
+@media (max-width: 768px) {
+  .container-hero {
+    text-align: center;
+    padding: var(--space-md);
+  }
+
+  .logo img {
+    width: 80%;
+  }
+}

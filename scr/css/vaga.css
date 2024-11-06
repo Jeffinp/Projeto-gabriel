@@ -1,91 +1,238 @@
- /* Benefits Section */
- .benefits-section {
+/* Benefits Section - Versão Moderna */
+.benefits-section {
     padding: var(--spacing-2xl) 0;
-    background-color: var(--color-surface);
+    background: linear-gradient(135deg,
+            var(--color-surface),
+            rgba(var(--color-primary-rgb), 0.05));
+    position: relative;
+    overflow: hidden;
 }
 
+/* Efeito de fundo animado */
+.benefits-section::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: radial-gradient(circle at 50% 50%,
+            rgba(var(--color-primary-rgb), 0.1) 0%,
+            transparent 50%);
+    animation: pulse 8s infinite ease-in-out;
+}
+
+/* Título com efeito de gradiente */
 .benefits-section h2 {
     text-align: center;
-    font-size: clamp(1.5rem, 4vw, 2.5rem);
-    color: var(--color-text);
+    font-size: clamp(1.75rem, 4vw, 2.75rem);
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
     margin-bottom: var(--spacing-xl);
+    position: relative;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
 }
 
+/* Grid de benefícios com layout responsivo */
 .benefits-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: var(--spacing-lg);
     padding: var(--spacing-md);
+    position: relative;
+    z-index: 1;
 }
 
+/* Cards de benefícios modernos */
 .benefit-card {
     background: var(--color-white);
     padding: var(--spacing-lg);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-md);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: var(--radius-xl);
+    box-shadow:
+        0 4px 6px rgba(0, 0, 0, 0.05),
+        0 10px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out forwards;
 }
 
+/* Delay escalonado para os cards */
+.benefit-card:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.benefit-card:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.benefit-card:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.benefit-card:nth-child(4) {
+    animation-delay: 0.5s;
+}
+
+.benefit-card:nth-child(5) {
+    animation-delay: 0.6s;
+}
+
+/* Efeito hover sofisticado */
 .benefit-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow:
+        0 8px 12px rgba(0, 0, 0, 0.08),
+        0 16px 24px rgba(0, 0, 0, 0.12);
 }
 
+/* Efeito de brilho no hover */
+.benefit-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg,
+            transparent,
+            rgba(255, 255, 255, 0.3),
+            transparent);
+    transition: 0.6s;
+}
+
+.benefit-card:hover::before {
+    left: 100%;
+}
+
+/* Estilização do título do card */
 .benefit-card h3 {
     color: var(--color-primary);
-    font-size: 1.25rem;
-    margin-bottom: var(--spacing-sm);
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+    position: relative;
+    padding-bottom: var(--spacing-sm);
 }
 
+/* Linha decorativa sob o título */
+.benefit-card h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: var(--color-primary);
+    border-radius: var(--radius-full);
+    transition: width 0.3s ease;
+}
+
+.benefit-card:hover h3::after {
+    width: 60px;
+}
+
+/* Estilização do texto do card */
 .benefit-card p {
     color: var(--color-text-light);
-    font-size: 1rem;
-    line-height: 1.6;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    opacity: 0.9;
 }
 
-/* Responsive Design */
+/* Animações */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: scale(1.05);
+        opacity: 0.7;
+    }
+}
+
+/* Media Queries Aprimoradas */
 @media (max-width: 992px) {
-    .content-wrapper {
-        flex-direction: column;
-        gap: var(--spacing-lg);
-    }
-
-    .image-wrapper {
-        transform: none;
-        max-width: 600px;
-        margin: 0 auto;
-    }
-
     .benefits-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-md);
+    }
+
+    .benefit-card {
+        padding: var(--spacing-md);
+    }
+
+    .benefit-card h3 {
+        font-size: 1.3rem;
     }
 }
 
 @media (max-width: 768px) {
     .benefits-grid {
         grid-template-columns: 1fr;
+        max-width: 500px;
+        margin: 0 auto;
     }
 
-    .feature-item:hover {
-        transform: none;
+    .benefit-card:hover {
+        transform: translateY(-4px) scale(1.01);
     }
 
-    .cta-button {
-        width: 100%;
-        max-width: 400px;
+    .benefit-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .benefit-card p {
+        font-size: 1rem;
     }
 }
 
 @media (max-width: 480px) {
-    .accent-title span {
-        padding: var(--spacing-xs) var(--spacing-md);
+    .benefits-section {
+        padding: var(--spacing-xl) var(--spacing-sm);
     }
 
-    .intro-text {
-        font-size: 1rem;
-    }
-
-    .feature-item {
+    .benefits-grid {
         padding: var(--spacing-sm);
+    }
+
+    .benefit-card {
+        padding: var(--spacing-md);
+    }
+
+    .benefit-card h3::after {
+        width: 30px;
+    }
+}
+
+/* Preferências de Redução de Movimento */
+@media (prefers-reduced-motion: reduce) {
+
+    .benefit-card,
+    .benefits-section::before,
+    .benefit-card::before {
+        animation: none;
+        transition: none;
     }
 }

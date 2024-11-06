@@ -76,33 +76,30 @@ body {
     ;
 }
 
-.container {
-    max-width: var(--container-max-width);
-    margin: 0 auto;
-    padding: 0 var(--container-padding);
-}
+
 
 html {
-font-size: 16px;
-scroll-behavior: smooth;
+    font-size: 16px;
+    scroll-behavior: smooth;
 }
 
 .logo img {
-margin: var(--spacing-xs) auto; /* Centraliza horizontalmente */
-max-width: 100%;
-height: auto;
-display: block;
+    margin: var(--spacing-xs) auto;
+    /* Centraliza horizontalmente */
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 .section-padding {
-padding: var(--spacing-xl) 0;
+    padding: var(--spacing-xl) 0;
 }
 
 .bg-light {
-background-color: var(--color-white);
+    background-color: var(--color-white);
 }
 
 .bg-accent {
-background-color: var(--color-secondary);
-color: var(--color-white);
+    background-color: var(--color-secondary);
+    color: var(--color-white);
 }
