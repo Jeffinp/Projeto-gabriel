@@ -105,6 +105,7 @@
   letter-spacing: -0.02em;
   line-height: 1.2;
   margin-bottom: var(--space-md);
+  color: white;
 }
 
 .hero__subtitle {
