@@ -1,12 +1,53 @@
-// main.js
+/**
+ * Arquivo JavaScript Principal
+ * ============================
+ * Este arquivo orquestra a inicialização de vários componentes
+ * e lida com o evento DOMContentLoaded.
+ */
 document.addEventListener('DOMContentLoaded', () => {
     initFAQ();
     initMobileMenu();
     initSwiper();
     initParticles();
+    // Inicialize outros componentes conforme necessário
+
+    // Seleciona todos os botões com o atributo data-modal
+    const modalButtons = document.querySelectorAll('.services__button[data-modal]');
+    const modals = document.querySelectorAll('.services__modal');
+    const closeButtons = document.querySelectorAll('.services__modal-close');
+
+    // Abre o modal correspondente
+    modalButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const modalId = button.getAttribute('data-modal');
+            const modal = document.getElementById(modalId);
+            modal.classList.add('active-modal');
+        });
+    });
+
+    // Fecha o modal quando o botão de fechar é clicado
+    closeButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const modal = button.closest('.services__modal');
+            modal.classList.remove('active-modal');
+        });
+    });
+
+    // Fecha o modal quando se clica fora dele
+    modals.forEach(modal => {
+        modal.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                modal.classList.remove('active-modal');
+            }
+        });
+    });
 });
 
-// Módulo FAQ
+/**
+ * Módulo FAQ
+ * ===========
+ * Lida com a funcionalidade de acordeão da seção de Perguntas Frequentes.
+ */
 const initFAQ = () => {
     const faqQuestions = document.querySelectorAll('.faq-question');
 
@@ -38,7 +79,11 @@ const initFAQ = () => {
     });
 };
 
-// Módulo Menu Mobile
+/**
+ * Módulo Menu Mobile
+ * ===================
+ * Lida com o comportamento de abrir/fechar do menu mobile.
+ */
 const initMobileMenu = () => {
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const navLinks = document.querySelector('.nav-links');
@@ -94,7 +139,11 @@ const initMobileMenu = () => {
     });
 };
 
-// Módulo Swiper
+/**
+ * Módulo Swiper
+ * ==============
+ * Inicializa e configura o carrossel Swiper.
+ */
 const initSwiper = () => {
     const swiperConfig = {
         slidesPerView: 1,
@@ -157,7 +206,11 @@ const initSwiper = () => {
     swiperContainer.addEventListener('mouseleave', () => swiper.autoplay.start());
 };
 
-// Módulo Particles
+/**
+ * Módulo Particles
+ * ===============
+ * Cria e anima as partículas no fundo da seção hero.
+ */
 const initParticles = () => {
     const hero = document.querySelector('.hero');
     const numParticles = 55;
@@ -175,13 +228,13 @@ const initParticles = () => {
 
         particle.className = 'particle';
         particle.style.cssText = `
-            position: absolute;
-            width: ${size}px;
-            height: ${size}px;
-            background: rgba(255, 255, 255, 0.5);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 1;
+          position: absolute;
+          width: ${size}px;
+          height: ${size}px;
+          background: rgba(255, 255, 255, 0.5);
+          border-radius: 50%;
+          pointer-events: none;
+          z-index: 1;
         `;
 
         hero.appendChild(particle);
